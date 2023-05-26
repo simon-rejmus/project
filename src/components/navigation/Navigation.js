@@ -6,7 +6,9 @@ const Navigation = () => {
     return (
         <nav>
             <div className="search-bar">
-                <TbSearch className="search-icon"/>
+                <button>
+                    <TbSearch className="search-icon"/>
+                </button>
                 <input type="text" className="search-input"/>
             </div>
             <div className="logo">

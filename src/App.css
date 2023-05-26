@@ -37,6 +37,10 @@ nav {
   max-width: 130px;
 }
 
+.search-input:focus {
+  outline: none;
+}
+
 .logo{
   flex: 1;
   text-align: center;
