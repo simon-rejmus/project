@@ -6,13 +6,13 @@ const Navigation = () => {
     return (
         <nav>
             <div className="search-bar">
-                <button>
+                <button className="search-icon-btn">
                     <TbSearch className="search-icon"/>
                 </button>
                 <input type="text" className="search-input"/>
             </div>
             <div className="logo">
-                <img src={logo} className="App-logo" alt="logo" />
+                <a href="/" ><img src={logo} className="App-logo" alt="logo" /></a>
             </div>
             <div className="navigation-links">
                 <a href="/" className="nav-link active">Home</a>
