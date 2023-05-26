@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6dacbb;
+  padding: 0 15px;
+  height: 90px;
+}
+
+.search-bar{
+  display: flex;
+  gap: 5px;
+  flex: 0 0 auto;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+}
+
+.search-icon {
+  color: white;
+  font-size: 30px;
+}
+
+.search-input {
+  background: none;
+  border-style: none;
+  color: white;
+  font-size: 16px;
+  max-width: 130px;
+}
+
+.logo{
+  flex: 1;
+  text-align: center;
+}
+
+.navigation-links{
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #6dacbb;
+  padding: 8px 12 px;
+}
+
+.nav-link.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
