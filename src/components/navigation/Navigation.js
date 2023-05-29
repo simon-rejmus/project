@@ -15,9 +15,9 @@ const Navigation = () => {
                 <a href="/" ><img src={logo} className="App-logo" alt="logo" /></a>
             </div>
             <div className="navigation-links">
-                <a href="/" className="nav-link active">Home</a>
-                <a href="/contact" className="nav-link">Contact</a>
-                <a href="/about" className="nav-link">About me</a>
+                <div className="nav-link active"><a href="/">Home</a></div>
+                <div className="nav-link"><a href="/contact">Contact</a></div>
+                <div className="nav-link"><a href="/about">About me</a></div>
             </div>
         </nav>
     )
