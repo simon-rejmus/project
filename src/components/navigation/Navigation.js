@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import PageContext from "../../PageContext";
 import logo from '../../logo.png';
 import { TbSearch } from 'react-icons/tb';
 
 const Navigation = ({ onPageChange }) => {
-    const [active, setActive] = useState('home');
+    const { currentPage, handlePageChange } = useContext(PageContext);
 
     const handleButtonClick = (page) => {
-        setActive(page);
-        onPageChange(page)
+        handlePageChange(page);
+        onPageChange(page);
     }
 
     return (
@@ -23,17 +24,17 @@ const Navigation = ({ onPageChange }) => {
             </div>
             <div className="navigation-links">
                 <button onClick={() => handleButtonClick('home')}>
-                    <div className={active === 'home' ? 'nav-link active' : 'nav-link'}>
+                    <div className={currentPage === 'home' ? 'nav-link active' : 'nav-link'}>
                         Home
                     </div>
                 </button>
                 <button onClick={() => handleButtonClick('contact')}>
-                    <div className={active === 'contact' ? 'nav-link active' : 'nav-link'}>
+                    <div className={currentPage === 'contact' ? 'nav-link active' : 'nav-link'}>
                         Contact
                     </div>
                 </button>
                 <button onClick={() => handleButtonClick('about')}>
-                    <div className={active === 'about' ? 'nav-link active' : 'nav-link'}>
+                    <div className={currentPage === 'about' ? 'nav-link active' : 'nav-link'}>
                         About
                     </div>
                 </button>
