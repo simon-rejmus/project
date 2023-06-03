@@ -14,13 +14,15 @@ const Navigation = ({ onPageChange }) => {
     return (
         <nav>
             <div className="search-bar">
-                <button className="search-icon-btn">
+                <button className="search-icon-btn" >
                     <TbSearch className="search-icon"/>
                 </button>
                 <input type="text" className="search-input"/>
             </div>
             <div className="logo">
-                <a href="/" ><img src={logo} className="App-logo" alt="logo" /></a>
+                <button onClick={() => handleButtonClick('home')}>
+                    <img src={logo} className="App-logo" alt="logo" />
+                </button>
             </div>
             <div className="navigation-links">
                 <button onClick={() => handleButtonClick('home')}>
