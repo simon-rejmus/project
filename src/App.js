@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 
 import Navigation from "./components/navigation/Navigation";
@@ -11,6 +11,23 @@ import PageContext from './PageContext';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [instagramPosts, setInstagramPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchInstagramPosts = async () => {
+      try {
+        const response = await fetch(
+          `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url&access_token=IGQVJYaGxRVThGb0lLMXY3ZA0hwdmo0LWZAvT2pwQU12aFdWakwxMzVQYmt2NU9keHJ6WjN5bHY3a2tjNTZAGaXg4UXFmZAXJIcHhGM0xZAY0M5NkhxaW92WlMzdFlQZAXM1Ml85emNXWUpyQzFnMm8zdUEtRAZDZD`
+        );
+        const data = await response.json();
+        setInstagramPosts(data.data);
+      } catch (error) {
+        console.error('Error fetching Instagram posts:', error);
+      }
+    };
+
+    fetchInstagramPosts();
+  }, []);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -30,7 +47,7 @@ function App() {
   };
 
   return (
-    <PageContext.Provider value={{ currentPage, handlePageChange }}>
+    <PageContext.Provider value={{ currentPage, handlePageChange, instagramPosts }}>
       <div className="App">
         <Navigation onPageChange={handlePageChange}/>
         <div className='content'>

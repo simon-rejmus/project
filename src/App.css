@@ -10,7 +10,7 @@ body {
   color: white;
 }
 
-/* NAVIGATION */
+/*//////////////////  NAVIGATION  //////////////////*/
 
 .App-logo {
   height: 50px;
@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -129,18 +129,104 @@ nav {
   transition: 0.4s;
 }
 
-/* CONTENT */
+/*//////////////////  CONTENT  //////////////////*/
 
 .content {
-  margin-top: 100px;
-  padding: 10px;
+  margin-top: 110px;
+  padding: 0px 20px;
 }
 
-/* HOME */
+/*//////////////////  HOME  //////////////////*/
 
+.instagram-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
 
+.post-container {
+  position: relative;
+  animation: fadeIn 500ms ease-in forwards;
+  overflow: hidden;
+}
 
-/* CONTACT */
+.post-container.active {
+  background-color: #6dacbb;
+  color: white;
+  object-fit: cover;
+}
+
+.post-container.active .post-image {
+  display: none;
+}
+
+.post-container.active .post-overlay {
+  pointer-events: auto;
+}
+
+.post-container.active .hashtag-buttons {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-description {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #6dacbb;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.image-description img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hashtag-button {
+  background-color: white;
+  color:#6dacbb;
+  padding: 5px 13px;
+  margin: 5px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.hashtag-button:hover {
+  color: #1D1D1D;
+  transition: 0.5s;
+}
+
+.empty-fill {
+  background-color: rgba(0, 0, 0, 0);
+  height: 150px;
+}
+
+/*//////////////////  CONTACT  //////////////////*/
 
 .contact {
   background-color: #6dacbb;
@@ -254,7 +340,7 @@ form button:hover {
 }
 
 
-/* ABOUT */
+/*//////////////////  ABOUT  //////////////////*/
 
 .about {
   display: grid;
@@ -311,7 +397,7 @@ form button:hover {
   transition: 0.3s;
 }
 
-/* FOOTER */
+/*//////////////////  FOOTER  //////////////////*/
 
 footer {
   position: fixed;

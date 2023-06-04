@@ -80,9 +80,7 @@ const Contact = () => {
     <div className='contact'>
       {!sent ? (
         <div>
-          {/* <h1>Contact form</h1> */}
-          <h1>Form sent successfully</h1>
-          <p>Thank you for the message Simon{name}. I will reach out to you soon.</p>
+          <h1>Contact form</h1>
           <form ref={form} onSubmit={handleSubmit}>
             <div>
               <label>Name:</label>
@@ -133,7 +131,7 @@ const Contact = () => {
       ) : (
         <div>
           <h1>Form sent successfully</h1>
-          <p>Thank you for the message {name}. I will contact you soon.</p>
+          <p>Thank you for the message {name}. I will reach out to you soon.</p>
         </div>
       )}
     </div>

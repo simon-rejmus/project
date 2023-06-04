@@ -1,10 +1,11 @@
 import React from "react";
-import PageContext from "../../PageContext";
+import InstagramPost from "../instagram/InstagramPost";
 
 const Home = () => {
     return (
         <div>
-        <h1>Home</h1>
+        <InstagramPost />
+        <div className="empty-fill"></div>
         </div>
     )
 }
