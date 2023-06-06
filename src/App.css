@@ -138,9 +138,27 @@ nav {
 
 /*//////////////////  HOME  //////////////////*/
 
+.loading {
+  font-size: 65px;
+  margin-top: 50px;
+  margin-right: 30px;
+  color: #6dacbb;
+  animation: spin 1.5s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .instagram-posts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   justify-items: center;
   margin-top: 20px;
@@ -152,22 +170,9 @@ nav {
   overflow: hidden;
 }
 
-.post-container.active {
-  background-color: #6dacbb;
-  color: white;
-  object-fit: cover;
-}
-
-.post-container.active .post-image {
-  display: none;
-}
-
-.post-container.active .post-overlay {
-  pointer-events: auto;
-}
-
-.post-container.active .hashtag-buttons {
-  display: flex;
+.post-container:hover .hashtags {
+  max-height: 150px;
+  transition: max-height 0.4s ease-out;
 }
 
 @keyframes fadeIn {
@@ -191,6 +196,7 @@ nav {
   font-size: 18px;
   font-weight: bold;
   text-align: left;
+  max-width: 400px;
 }
 
 .image-description img {
@@ -199,26 +205,64 @@ nav {
 }
 
 .post-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  max-width: 400px;
+}
+
+.hashtags {
+  background-color: #6dacbb;
+  max-width: 400px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 0;
 }
 
 .hashtag-button {
   background-color: white;
   color:#6dacbb;
   padding: 5px 13px;
-  margin: 5px;
+  margin: 6px;
   border: none;
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
   transition: 0.5s;
 }
 
 .hashtag-button:hover {
   color: #1D1D1D;
   transition: 0.5s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.no-images {
+  background-color: #6dacbb;
+  width: 400px;
+  margin-top: 40px;
+  animation: fadeIn 500ms ease-in forwards;
+}
+
+.empty-gap {
+  background-color: rgba(0, 0, 0, 0);
+  height: 10px;
 }
 
 .empty-fill {
@@ -370,7 +414,7 @@ form button:hover {
 
 .about-3 {
   grid-area: 2 / 1 / 3 / 3;
-  padding: 15px 20px;
+  padding: 0px 20px 10px;
 }
 
 .bigger-p {
