@@ -5,19 +5,18 @@ import movie from '../../images/movie.png';
 import { RiLoader5Fill } from 'react-icons/ri';
 
 const InstagramPosts = () => {
-  const { filteredInstagramPosts, setFilteredInstagramPosts } = useContext(PageContext);
+  const { filteredInstagramPosts, setFilteredInstagramPosts, instagramPosts } = useContext(PageContext);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [originalInstagramPosts, setOriginalInstagramPosts] = useState([]);
+  const [originalInstagramPosts, setOriginalInstagramPosts] = useState(instagramPosts);
 
   useEffect(() => {
     setIsLoading(true);
 
     setTimeout(() => {
       setIsLoading(false);
-      setOriginalInstagramPosts(filteredInstagramPosts);
     }, 1000);
-  }, []);
+  }, [originalInstagramPosts]);
 
   const getHashtags = (caption) => {
     const regex = /#[a-zA-Z0-9_]+/g;
@@ -66,9 +65,10 @@ const InstagramPosts = () => {
     setIsLoading(true);
 
     setTimeout(() => {
-      const filteredPosts = originalInstagramPosts.filter((post) =>
-        post.caption.toLowerCase().includes(hashtag.toLowerCase())
+      const filteredPosts = instagramPosts.filter((post) =>
+        post.caption.toLowerCase().includes(hashtag.toLowerCase()) && !post.caption.toLowerCase().includes('reels')
       );
+      setOriginalInstagramPosts(instagramPosts);
       setFilteredInstagramPosts([...filteredPosts]);
       setIsLoading(false);
     }, 1000);
@@ -84,6 +84,12 @@ const InstagramPosts = () => {
         <>
           {filteredInstagramPosts.length > 0 ? (
             filteredInstagramPosts.map((post, index) => {
+              if (
+                post.media_type === "REEL" ||
+                (post.media_type === "CAROUSEL_ALBUM" && (!post.children || post.children.data.length <= 1))
+              ) {
+                return null;
+              }
               const thirdImage = getThirdImage(post);
 
               return (

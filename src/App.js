@@ -21,8 +21,16 @@ function App() {
           `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,children{media_url}&access_token=IGQVJYaGxRVThGb0lLMXY3ZA0hwdmo0LWZAvT2pwQU12aFdWakwxMzVQYmt2NU9keHJ6WjN5bHY3a2tjNTZAGaXg4UXFmZAXJIcHhGM0xZAY0M5NkhxaW92WlMzdFlQZAXM1Ml85emNXWUpyQzFnMm8zdUEtRAZDZD`
         );
         const data = await response.json();
-        setInstagramPosts(data.data);
-        setFilteredInstagramPosts(data.data);
+
+        const filteredPosts = data.data.filter(
+          (post) =>
+            post.media_type !== 'REEL' &&
+            (post.media_type !== 'CAROUSEL_ALBUM' || (post.children && post.children.data.length >= 3)) &&
+            !post.caption.toLowerCase().includes('reels')
+        );
+
+        setInstagramPosts(filteredPosts);
+        setFilteredInstagramPosts(filteredPosts);
       } catch (error) {
         console.error('Error fetching Instagram posts:', error);
       }
@@ -54,6 +62,7 @@ function App() {
         <Navigation onPageChange={handlePageChange}/>
         <div className='content'>
           {renderContent()}
+          <div className="empty-fill"></div>
         </div>
         <Footer/>
       </div>

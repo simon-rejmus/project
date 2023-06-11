@@ -5,7 +5,6 @@ const Home = () => {
     return (
         <div>
         <InstagramPost />
-        <div className="empty-fill"></div>
         </div>
     )
 }

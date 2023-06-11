@@ -159,7 +159,7 @@ nav {
 .instagram-posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
+  gap: 15px;
   justify-items: center;
   margin-top: 20px;
 }
@@ -196,7 +196,7 @@ nav {
   font-size: 18px;
   font-weight: bold;
   text-align: left;
-  max-width: 400px;
+  max-width: 380px;
 }
 
 .image-description img {
