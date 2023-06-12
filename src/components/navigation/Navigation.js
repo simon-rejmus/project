@@ -10,6 +10,7 @@ const Navigation = ({ onPageChange }) => {
   const handleButtonClick = (page) => {
     handlePageChange(page);
     onPageChange(page);
+    setFilteredInstagramPosts(instagramPosts);
   };
 
   const handleSearchInputChange = (event) => {
