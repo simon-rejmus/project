@@ -13,8 +13,14 @@ const About = () => {
         <div className="about">
             <div className="about-1">
                 <img src={sevan} alt="Sevan Reeve" />
+                <div className="about-2">
+                    <h1>About me</h1>
+                    <p>I'm Sevan Reeve, a computer science graduate and frontend developer with a passion for art.</p>
+                    <p>As a self-taught illustrator, I dedicate my free time to creating unique illustrations inspired by the simplicity and geometric style of Duolingo.</p>
+                    <p><b>Music album covers and movie posters are my primary focus.</b></p>
+                </div>
             </div>
-            <div className="about-2">
+            <div className="about-2-copy">
                 <h1>About me</h1>
                 <p>I'm Sevan Reeve, a computer science graduate and frontend developer with a passion for art.</p>
                 <p>As a self-taught illustrator, I dedicate my free time to creating unique illustrations inspired by the simplicity and geometric style of Duolingo.</p>
