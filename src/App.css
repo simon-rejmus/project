@@ -166,13 +166,13 @@ nav {
 
 .post-container {
   position: relative;
-  animation: fadeIn 500ms ease-in forwards;
+  animation: fadeIn 0.7s ease-in forwards;
   overflow: hidden;
 }
 
 .post-container:hover .hashtags {
   max-height: 300px;
-  transition: max-height 0.4s ease-out;
+  transition: max-height 0.8s ease-out;
 }
 
 @keyframes fadeIn {
@@ -287,6 +287,8 @@ nav {
   width: 50%;
   margin: 0 auto;
   text-align: left;
+  max-width: 700px;
+  min-width: 400px;
   animation: fadeIn 500ms ease-in forwards;
 }
 
@@ -303,7 +305,7 @@ form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
-  grid-column-gap: 0px;
+  grid-column-gap: 10px;
   grid-row-gap: 10px;
   background-color: white;
   padding: 15px;
@@ -323,6 +325,7 @@ form input {
   border-color: #6dacbb;
   border-style: solid;
   transition: 0.3s;
+  min-width: 100px;
 }
 
 form input:focus {
