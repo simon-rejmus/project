@@ -10,28 +10,6 @@
       content="React website"
     />
 
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId: '1318362599025008',
-          cookie: true,
-          xfbml: true,
-          version: 'v14.0'
-        });
-    
-        FB.AppEvents.logPageView();
-      };
-    
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/instafeed.js"></script>
     
     <script type="text/javascript"
@@ -52,10 +30,5 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- <fb:login-button 
-      scope="public_profile,email"
-      onlogin="checkLoginState();">
-    </fb:login-button> -->
   </body>
 </html>

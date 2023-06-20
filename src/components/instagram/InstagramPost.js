@@ -10,6 +10,7 @@ const InstagramPosts = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [originalInstagramPosts, setOriginalInstagramPosts] = useState(instagramPosts);
 
+  //LOADING IMAGES
   useEffect(() => {
     setIsLoading(true);
 
@@ -18,6 +19,7 @@ const InstagramPosts = () => {
     }, 1000);
   }, [originalInstagramPosts]);
 
+  //CREATING BUTTONS FOM HASHTAGS
   const getHashtags = (caption) => {
     const regex = /#[a-zA-Z0-9_]+/g;
     const hashtags = caption.match(regex) || [];
@@ -32,6 +34,7 @@ const InstagramPosts = () => {
     ));
   };
 
+  //CUTTING OUT THE TITLE
   const filterDescription = (description) => {
     const index = description.indexOf('#');
     return index !== -1 ? description.substring(0, index) : description;

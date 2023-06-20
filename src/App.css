@@ -197,6 +197,7 @@ nav {
   font-weight: bold;
   text-align: left;
   max-width: 380px;
+  height: 40px;
 }
 
 .image-description img {
@@ -392,6 +393,10 @@ form button:hover {
 .validation-message {
   padding: 6px;
   color:#6dacbb;
+}
+
+.form-sent {
+  animation: fadeIn 500ms ease-in forwards;
 }
 
 

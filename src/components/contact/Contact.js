@@ -129,7 +129,7 @@ const Contact = () => {
           </form>
         </div>
       ) : (
-        <div>
+        <div className='form-sent'>
           <h1>Form sent successfully</h1>
           <p>Thank you for the message {name}. I will reach out to you soon.</p>
         </div>

@@ -14,6 +14,7 @@ function App() {
   const [instagramPosts, setInstagramPosts] = useState([]);
   const [filteredInstagramPosts, setFilteredInstagramPosts] = useState([]);
 
+  //Fetching posts from Instagram Graph API
   useEffect(() => {
     const fetchInstagramPosts = async () => {
       try {
