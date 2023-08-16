@@ -13,13 +13,14 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [instagramPosts, setInstagramPosts] = useState([]);
   const [filteredInstagramPosts, setFilteredInstagramPosts] = useState([]);
+  const [paginationCursor, setPaginationCursor] = useState('');
 
   //Fetching posts from Instagram Graph API
   useEffect(() => {
     const fetchInstagramPosts = async () => {
       try {
         const response = await fetch(
-          `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,children{media_url}&access_token=IGQVJYaGxRVThGb0lLMXY3ZA0hwdmo0LWZAvT2pwQU12aFdWakwxMzVQYmt2NU9keHJ6WjN5bHY3a2tjNTZAGaXg4UXFmZAXJIcHhGM0xZAY0M5NkhxaW92WlMzdFlQZAXM1Ml85emNXWUpyQzFnMm8zdUEtRAZDZD`
+          `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,children{media_url}&access_token=IGQWRNbkFyOXhHRkZAOYWN1WDU5bXpUYTBZAMjJobTZAzejYxZADE4UHQ3MUcxOGhMaGd1bUx4UldHakRvZAmRaRjhKRV9KV2FyeEtkUEZA3TVo0X2RNOTRxZAkc1eWsyVWZATbjF3N3FhVGlfbUJ3RWRfQlNPY3FSOXhkaVEZD`
         );
         const data = await response.json();
 
