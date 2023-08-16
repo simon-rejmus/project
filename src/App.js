@@ -13,7 +13,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [instagramPosts, setInstagramPosts] = useState([]);
   const [filteredInstagramPosts, setFilteredInstagramPosts] = useState([]);
-  const [paginationCursor, setPaginationCursor] = useState('');
 
   //Fetching posts from Instagram Graph API
   useEffect(() => {
