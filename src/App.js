@@ -19,7 +19,7 @@ function App() {
     const fetchInstagramPosts = async () => {
       try {
         const response = await fetch(
-          `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,children{media_url}&access_token=IGQWRNbkFyOXhHRkZAOYWN1WDU5bXpUYTBZAMjJobTZAzejYxZADE4UHQ3MUcxOGhMaGd1bUx4UldHakRvZAmRaRjhKRV9KV2FueEtkUEZA3TVo0X2RNOTRxZAkc1eWsyVWZATbjF3N3FhVGlfbUJ3RWRfQlNPY3FSOXhkaVEZD`
+          `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,children{media_url}&access_token=IGQWRNbkFyOXhHRkZAOYWN1WDU5bXpUYTBZAMjJobTZAzejYxZADE4UHQ3MUcxOGhMaGd1bUx4UldHakRvZAmRaRjhKRV9KV2FyeEtkUEZA3TVo0X2RNOTRxZAkc1eWsyVWZATbjF3N3FhVGlfbUJ3RWRfQlNPY3FSOXhkaVEZD`
         );
         const data = await response.json();
 
